@@ -5,8 +5,7 @@ commit=$3 ##Комментарий коммита
 EPFPath=$4 ##Обработка менеджера
 gitKD3GitPath=$5 ##Путь к репозиторию KD3Git/Вынести в общие настройки
 gitCatPath=$6 ##Каталог репозитория правил
-OneSPath=$7 ##Каталог репозитория правил
-
+OneSPath=$7 ##Путь до папки бин платформы
 PathToDisassemblyScripts="$gitKD3GitPath/Модули/Разборка"
 
 gitRulesPath="$gitCatPath/ПравилаОбмена" ##Правила обмена разобранные на функции
@@ -36,7 +35,7 @@ if "$PathToDisassemblyScripts/РазборОбработкиНаИсходник
 		git switch -c "$gitBranchName" ##Если делаем новую ветку, то перед ее созданием надо выбрать и перейти на ее родителя
 	fi
 	
-	git pull origin "$gitBranchName" ##??? / заменить origin на переменную
+	#git pull origin "$gitBranchName" ##??? / заменить origin на переменную
 	
 	cd "$ResDisassemblyCat"
 	cp $(find "$ResDisassemblyCat" -name '*.bsl') "$RulesFileName";
@@ -49,7 +48,7 @@ if "$PathToDisassemblyScripts/РазборОбработкиНаИсходник
 
 	git add . 
 	git commit -m "$commit"
-	git push -u origin "$gitBranchName" ##??? / заменить origin на переменную
+	#git push -u origin "$gitBranchName" ##??? / заменить origin на переменную
 	
 else 
 	echo $?

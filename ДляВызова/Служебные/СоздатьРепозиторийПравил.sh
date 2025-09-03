@@ -36,12 +36,14 @@ else
     echo "В локальную папку:"
     echo "  ${RepoPath}"
     git clone "${RemoteURL}" "${RepoPath}"
+
+	cd "${RepoPath}"
 	
 	echo "Клонируем внутренний шаблон KD3Git..."
     git clone "${BASE_DIR}/KD3Git" KD3Git
 
     echo "Копируем шаблонные файлы..."
-    cp "KD3Git/Шаблоны/template_.gitignore" .gitignore
+    #cp "KD3Git/Шаблоны/template_.gitignore" .gitignore
     cp "KD3Git/Шаблоны/template_RepoConfig.sh" RepoConfig.sh
     mkdir -p "KD3Git/Настройки"
     cp "${BASE_DIR}/KD3Git/Настройки/config.local.sh" "KD3Git/Настройки/"
