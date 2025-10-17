@@ -10,5 +10,5 @@ if [ -z "$EPFPath" ]; then
 fi
 
 
-"$PlatformPath" ENTERPRISE //IBName"$IBName" //N"$Usr" //P"$Pwd" //C"$LaunchParameter" //DisableStartupMessages //DisableStartupDialogs //DisableSplash //WA+ //AU- //Execute "$EPFPath" 
+"$PlatformPath" ENTERPRISE //IBName"$IBName" //N"$Usr" //P"$Pwd" //C"$LaunchParameter" //DisableStartupMessages //DisableSplash //WA+ //AU- //Execute "$EPFPath" 
 
