@@ -9,5 +9,5 @@ fi
 
 cd "$OneSPath"
 #./1cv8.exe DESIGNER //DumpExternalDataProcessorOrReportToFiles "D:\1с\Очоба\OS\test\TestUnpack\Res" "D:\1с\Очоба\OS\test\TestUnpack\T.epf" /Out "D:\1с\Очоба\OS\test\TestUnpack\Res\out.txt"
-./1cv8.exe DESIGNER //DumpExternalDataProcessorOrReportToFiles $ResCatalogPath $EPFPath -Plain /Out $LogPath
+./1cv8.exe DESIGNER //DumpExternalDataProcessorOrReportToFiles "$ResCatalogPath" "$EPFPath" -Plain /Out "$LogPath"
 
