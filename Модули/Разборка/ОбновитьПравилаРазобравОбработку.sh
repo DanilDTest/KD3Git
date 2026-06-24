@@ -1,4 +1,3 @@
-
 gitRepoName=$1 ##Имя репозитория
 gitBranchName=$2
 commit=$3 ##Комментарий коммита
@@ -43,8 +42,6 @@ if "$PathToDisassemblyScripts/РазборОбработкиНаИсходник
 	oscript "$PathToDisassemblyScripts/РазборПравилОбмена.os" "$ResDisassemblyCat/$RulesFileName" "$gitCatPath/ПравилаОбмена"
 
 	cd "$gitCatPath"
-	
-
 
 	git add . 
 	git commit -m "$commit"
