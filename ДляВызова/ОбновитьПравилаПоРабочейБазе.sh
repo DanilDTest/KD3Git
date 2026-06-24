@@ -3,8 +3,8 @@ source "$(git rev-parse --show-toplevel)"/Настройки/config.sh
 source $gitCatPath/RepoConfig.sh
 
 PathToOtherScripts=$gitKD3GitPath/Модули/Прочее
-PlatformPath="/c/Program Files/1cv8/8.3.24.1691/bin/1cv8c.exe"
-UnloadEPF="/d/Общая/ВыгрузитьАктуальныйМенеджерОбменаПР.epf"
+PlatformPath="${OneSPath%/}/1cv8c.exe"
+UnloadEPF="$gitKD3GitPath/Модули/Прочее/ВыгрузитьАктуальныйМенеджерОбменаПР.epf"
 
 EPFPath="$RulesUnloadDir"/"$RulesSyn"_Рабочие_$(date +%d_%m).epf
 LaunchParameter="$EPFPath"
