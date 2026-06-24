@@ -25,7 +25,7 @@ mkdir "$ResDisassemblyCat" 2>/dev/null
 #Мб имеет смысл выгружать результат разбора в отдельный подкаталог чтоб они перезатирались?
 
 ##																Куда сохранить Что разбирать
-if "$PathToDisassemblyScripts/РазборОбработкиНаИсходникиЧерезКонфигуратор.sh" "$ResDisassemblyCat" "$EPFPath" "$(pwd)\out.txt" "$OneSPath"; then
+if "$PathToDisassemblyScripts/РазборОбработкиНаИсходникиЧерезКонфигуратор.sh" "$ResDisassemblyCat" "$EPFPath" "$(pwd)/out.txt" "$OneSPath"; then
 	
 	cd "$gitCatPath"
 	

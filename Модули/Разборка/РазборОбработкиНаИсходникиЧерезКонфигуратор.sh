@@ -9,7 +9,7 @@ fi
 
 cd "$OneSPath"
 
-echo $ResCatalogPath
+
 echo $EPFPath
 echo $LogPath
 
