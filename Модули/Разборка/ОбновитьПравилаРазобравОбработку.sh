@@ -7,11 +7,6 @@ gitCatPath=$6 ##Каталог репозитория правил
 OneSPath=$7 ##Путь до папки бин платформы
 PathToDisassemblyScripts="$gitKD3GitPath/Модули/Разборка"
 
-command -v oscript >/dev/null 2>&1 || {
-    echo "Ошибка: oscript не найден. Установите OneScript: https://oscript.io"
-    exit 1
-}
-
 gitRulesPath="$gitCatPath/ПравилаОбмена" ##Правила обмена разобранные на функции
 ResDisassemblyCat="$gitCatPath/Ignore/РезультатРазбораОбработкиНаИсходники" ##Обработка менеджера разобранная на исходники
 
@@ -47,8 +42,6 @@ if "$PathToDisassemblyScripts/РазборОбработкиНаИсходник
 	oscript "$PathToDisassemblyScripts/РазборПравилОбмена.os" "$ResDisassemblyCat/$RulesFileName" "$gitCatPath/ПравилаОбмена"
 
 	cd "$gitCatPath"
-	
-
 
 	git add . 
 	git commit -m "$commit"
