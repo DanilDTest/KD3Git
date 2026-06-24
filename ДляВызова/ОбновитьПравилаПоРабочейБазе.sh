@@ -1,5 +1,5 @@
 set +o history
-source $(git rev-parse --show-toplevel)/Настройки/config.sh
+source "$(git rev-parse --show-toplevel)"/Настройки/config.sh
 source $gitCatPath/RepoConfig.sh
 
 PathToOtherScripts=$gitKD3GitPath/Модули/Прочее

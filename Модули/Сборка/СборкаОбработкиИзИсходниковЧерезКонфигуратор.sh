@@ -4,5 +4,5 @@ LogPath=$3
 OneSPath=$4 
 
 cd "$OneSPath"
-./1cv8.exe DESIGNER //LoadExternalDataProcessorOrReportFromFiles $ResCatalogPath $EPFPath -Plain /Out$LogPath 
+./1cv8.exe DESIGNER //LoadExternalDataProcessorOrReportFromFiles "$ResCatalogPath" "$EPFPath" -Plain /Out "$LogPath"
 

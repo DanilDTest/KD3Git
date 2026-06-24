@@ -8,7 +8,7 @@ fi
 
 initialDir="$(pwd)"
 gitRepoPath=$(git rev-parse --show-toplevel)
-gitRepoName=$(basename $gitRepoPath)
+gitRepoName=$(basename "$gitRepoPath")
 
 if [ "$gitRepoName" == "KD3Git" ];  then
 	#Сабмодуль, репозиторий скриптов в репозитории правил

@@ -18,7 +18,7 @@ get_repo_info() {
     cd "$PARENT_REPO_DIR" || return
     
     # Получаем имя репозитория (последняя часть пути)
-    repo_name=$(basename $(git rev-parse --show-toplevel) 2>/dev/null) 2>/dev/null
+    repo_name=$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")
     
     # Получаем текущую ветку
     branch=$(git branch --show-current 2>/dev/null)
