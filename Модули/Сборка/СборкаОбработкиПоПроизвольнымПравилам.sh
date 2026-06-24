@@ -13,27 +13,29 @@ PathToAssemblyScripts="$gitKD3GitPath/Модули/Сборка"
 
 SourcePath="$(pwd)/ИсходникиДляСборки/$NAME.xml" ##Исходники обработки для сборки
 
-logpath="$(pwd)\ЛогСборкиОбработки.txt" 
+logpath="$(pwd)/ЛогСборкиОбработки.txt"
 
 rm -rf ИсходникиДляСборки/
 
 mkdir ИсходникиДляСборки/
-mkdir ИсходникиДляСборки/$NAME
-mkdir ИсходникиДляСборки/$NAME/Ext
+mkdir "ИсходникиДляСборки/$NAME"
+mkdir "ИсходникиДляСборки/$NAME/Ext"
 
-touch ИсходникиДляСборки/$NAME/Ext/ObjectModule.bsl
+touch "ИсходникиДляСборки/$NAME/Ext/ObjectModule.bsl"
 
-cat "$RulesTxt" > ИсходникиДляСборки/$NAME/Ext/ObjectModule.bsl
+cat "$RulesTxt" > "ИсходникиДляСборки/$NAME/Ext/ObjectModule.bsl"
 
 # Создаем файл с замененными значениями
 sed -e "s/{{EPFName}}/$NAME/g" \
-    -e "s/{{EPFSynonym}}/$Synonym/g" \
-    -e "s/{{EPFComment}}/$Comment/g" $gitKD3GitPath/Шаблоны/templateEPF.xml > ИсходникиДляСборки/"$NAME.xml" 
+	-e "s/{{EPFSynonym}}/$Synonym/g" \
+	-e "s/{{EPFComment}}/$Comment/g" \
+	"$gitKD3GitPath/Шаблоны/templateEPF.xml" > "ИсходникиДляСборки/$NAME.xml"
 	
 
 
 # Преобразуем его в формат Windows
-windows_logpath=$(echo "$logpath" | sed -E 's|^/([a-z])/|\U\1:\\|') ##Почему то для вывода лога линуксовые формат пути не работает
+windows_logpath=$(echo "$logpath" | sed -E 's|^/([a-z])/|\U\1:/|')
+windows_logpath=$(echo "$windows_logpath" | sed 's|/|\\|g')
 
 "$PathToAssemblyScripts/СборкаОбработкиИзИсходниковЧерезКонфигуратор.sh" "$SourcePath" "$EPFPath" "$windows_logpath" "$OneSPath";
 
@@ -50,6 +52,6 @@ else
 	rm -rf "$logpath"
 	
 	echo -e "\e[32mГотово. Путь к собранной обработке\e[0m"
-	echo -e "\e[32m$EPFPath\e[0m"
+	printf '\e[32mcd %q\e[0m\n' "$EPFPath"
  
 fi
