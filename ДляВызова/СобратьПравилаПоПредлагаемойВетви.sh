@@ -1,6 +1,3 @@
-#!/bin/bash
-
-#set -x  # Включаем режим отладки
 set +o history
 source "$(git rev-parse --show-toplevel)"/Настройки/config.sh
 
@@ -9,6 +6,11 @@ cd "$gitCatPath"
 gitRulesPath="$gitCatPath/ПравилаОбмена" ##Правила обмена разобранные на функции
 ResCatalogPath="$gitCatPath/ПравилаОбменаСобранные" ##Каталог с результатами сборки правил
 PreviousFile=$1
+
+command -v oscript >/dev/null 2>&1 || {
+    echo "Ошибка: oscript не найден. Установите OneScript: https://oscript.io"
+    exit 1
+}
 
 read -e -p 'Исключить feature ветки? (y/n, по умолчанию y): ' answer 
 answer=${answer:-y}  # Если answer пустой (Enter), установить его в "y"
