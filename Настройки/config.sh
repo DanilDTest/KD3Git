@@ -28,3 +28,9 @@ fi
 PathToDisassemblyScripts="$gitKD3GitPath/Модули/Разборка"
 PathToRepoEditScripts="$gitKD3GitPath/Модули/РаботаСРепозиторием"
 PathToAssemblyScripts="$gitKD3GitPath/Модули/Сборка"
+
+# Проверка наличия oscript (OneScript)
+command -v oscript >/dev/null 2>&1 || {
+    echo "Ошибка: oscript не найден. Установите OneScript: https://oscript.io"
+    exit 1
+}
