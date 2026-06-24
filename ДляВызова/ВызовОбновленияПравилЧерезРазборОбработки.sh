@@ -1,11 +1,10 @@
 set +o history
-source "$(git rev-parse --show-toplevel)"/Настройки/config.sh
+source $(git rev-parse --show-toplevel)/Настройки/config.sh
 
 gitBranchName="$DevelopmentBranchName"
 commit="Обновление правил $gitRepoName"
 
 cd "$RulesCatPath"
-
 
 echo "Обработка для разбора"
 

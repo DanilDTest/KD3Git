@@ -2,9 +2,9 @@
 
 #set -x  # Включаем режим отладки
 set +o history
-source "$(git rev-parse --show-toplevel)"/Настройки/config.sh
+source $(git rev-parse --show-toplevel)/Настройки/config.sh
 
-cd "$gitCatPath"
+cd $gitCatPath
 
 gitRulesPath="$gitCatPath/ПравилаОбмена" ##Правила обмена разобранные на функции
 ResCatalogPath="$gitCatPath/ПравилаОбменаСобранные" ##Каталог с результатами сборки правил
@@ -56,7 +56,7 @@ select branch in "${branches_array[@]}"; do
 			RulesTxt="$filepath"
 			EPFPath="$ResCatalogPath"
 			
-			"$PathToAssemblyScripts/СборкаОбработкиПоПроизвольнымПравилам.sh" "$EPFName" "$EPFSynonym" "$EPFComment" "$RulesTxt" "$EPFPath" "$gitKD3GitPath" "$OneSPath";
+			"$PathToAssemblyScripts/СборкаОбработкиПоПроизвольнымПравилам.sh" $EPFName "$EPFSynonym" "$EPFComment" "$RulesTxt" "$EPFPath" "$gitKD3GitPath" "$OneSPath";
 			
 			#exec "$0" $filepath # Перезапуск самого скрипта
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-source "$(git rev-parse --show-toplevel)"/Настройки/config.sh
+source $(git rev-parse --show-toplevel)/Настройки/config.sh
 
 set +o history
 

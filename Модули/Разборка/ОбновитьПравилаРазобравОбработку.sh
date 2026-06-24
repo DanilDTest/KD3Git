@@ -38,7 +38,7 @@ if "$PathToDisassemblyScripts/РазборОбработкиНаИсходник
 	#git pull origin "$gitBranchName" ##??? / заменить origin на переменную
 	
 	cd "$ResDisassemblyCat"
-	cp "$(find "$ResDisassemblyCat" -name '*.bsl' -print -quit)" "$RulesFileName"
+	cp $(find "$ResDisassemblyCat" -name '*.bsl') "$RulesFileName";
 
 	oscript "$PathToDisassemblyScripts/РазборПравилОбмена.os" "$ResDisassemblyCat/$RulesFileName" "$gitCatPath/ПравилаОбмена"
 
